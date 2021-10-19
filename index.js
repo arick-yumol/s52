@@ -12,7 +12,15 @@ function countLetter(letter, sentence) {
     // If letter is a single character, count how many times a letter has occurred in a given sentence then return count.
     // If letter is invalid, return undefined.
 
-    
+    for (let i = 0; i < sentence.length; i++) { // for loop iteration to go over each character in the sentence (parameter)
+        if (letter === sentence.charAt(i)) {    // checks if letter is equal to the character at the index i of sentence
+            result += 1;    // adds 1 to the count whenever a letter is repeated
+        }
+        else if (letter.length > 1 && letter !== String) {  // restricts if the letter (parameter) contains more than 1 character, and if other data types are input as the parameter
+            return undefined;   // return undefined because the input letter (parameter) is invalid
+        }
+    }
+    return result;  // returns the total count of the letter (parameter) was repeated
 }
 
 
@@ -26,7 +34,14 @@ function isIsogram(text) {
     // The function should disregard text casing before doing anything else.
     // If the function finds a repeating letter, return false. Otherwise, return true.
 
-    
+    for (let i = 0; i < text.length; ++i) { // uses the length of the text (parameter) as reference for the outer for loop
+        for (let j = i + 1; j < text.length; ++j) { // j = i + 1 because it prevents i and j from becoming equal in all iterations in any text (parameter)
+            if (text[i] === text[j]) {  // compares the characters in both arrays 
+                return false;   // text is not an isogram
+            }
+        }
+    }
+    return true;    // text is an isogram
 }
 
 function purchase(age, price) {
@@ -43,6 +58,18 @@ function purchase(age, price) {
     // Return the rounded off price for people aged 22 to 64.
     // The returned value should be a string.
     
+    let discountedPrice = (price - (price * 0.2));  // discounted price
+    let roundedOffPrice = price;    // original price
+
+    if ((age >= 13 && age <= 21) || age >= 65) {    // condition to filter out by age
+        return discountedPrice.toFixed(2);  // the .toFixed() method will convert the number into string. the number inside the toFixed(method) is the number of decimal places retained
+    }
+    else if (age >= 22 && age <= 64) {  // condition to filter out by age
+        return roundedOffPrice.toFixed(2);  // the .toFixed() method will convert the number into string. the number inside the toFixed(method) is the number of decimal places retained
+    }
+    else {
+        return undefined    // ages below 13 will not be able to purchase
+    }
 }
 
 function findHotCategories(items) {
@@ -66,6 +93,7 @@ function findHotCategories(items) {
     // The expected output after processing the items array is ['toiletries', 'gadgets'].
     // Only putting return ['toiletries', 'gadgets'] will not be counted as a passing test during manual checking of codes.
 
+
 }
 
 function findFlyingVoters(candidateA, candidateB) {
@@ -85,6 +113,7 @@ function findFlyingVoters(candidateA, candidateB) {
     // The expected output after processing the candidates array is ['LIWf1l', 'V2hjZH'].
     // Only putting return ['LIWf1l', 'V2hjZH'] will not be counted as a passing test during manual checking of codes.
     
+
 }
 
 module.exports = {
