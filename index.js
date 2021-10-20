@@ -6,7 +6,31 @@ function countLetter(letter, sentence) {
     */
 
 
-    let result = 0;
+    let result = 0; // Zuitt created this variable to identify the number of occurrence/instances that the targeted value happened inside the string.
+    // container that will determine the number of times a letter have been repeated.
+
+    // lets create a control structure to accomplish item#1 
+    if (letter.length > 1) { // check emmet toolkit. alternative: letter.length !== 1
+        return undefined;
+    }
+    else {
+    // the logic will fall on the else branch if the condition is "NOT" met(single character)
+        // lets create a logic that will determine the occurrence of the letter inside the sentence/string
+        /*for ([initial value/expression],
+          initial value => lets declare a variable that will identify/describe the count of each index (usually i) inside the string.(index count)
+            [condition],
+          We want this process to evaluate the value of each index until it reaches the last index inside the string to terminate the process.
+            [iteration/icrement]) -> will repeat the iteration/loop until a given condition has been met*/
+        for (let indexCount = 0; indexCount < sentence.length; indexCount++) {
+            // expression
+            // lets create another control structure to determine if the target value has multiple occurrence/instances inside the string.
+            if (sentence[indexCount] === letter) {  // checks if the current value of the index inside the sentence is an exact match to the letter
+                result++;   // this will add +1 to the current value of the result
+            }   // this will evaluate if the target letter is an exact match to the current value of the index inside the string.
+            // we want to add another value to the result variable if we find a match for a single letter inside the string.
+        }
+        return result;
+    }
 
     // Check first whether the letter is a single character.
     // If letter is a single character, count how many times a letter has occurred in a given sentence then return count.
