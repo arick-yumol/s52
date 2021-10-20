@@ -112,7 +112,6 @@ function findFlyingVoters(candidateA, candidateB) {
 
     // The expected output after processing the candidates array is ['LIWf1l', 'V2hjZH'].
     // Only putting return ['LIWf1l', 'V2hjZH'] will not be counted as a passing test during manual checking of codes.
-    
 
 }
 
