@@ -6,7 +6,7 @@ function countLetter(letter, sentence) {
     */
 
 
-    let result = 0; // Zuitt created this variable to identify the number of occurrence/instances that the targeted value happened inside the string.
+    let result = 0; // Zuitt mentors created this variable to identify the number of occurrence/instances that the targeted value happened inside the string.
     // container that will determine the number of times a letter have been repeated.
 
     // lets create a control structure to accomplish item#1 
@@ -19,7 +19,7 @@ function countLetter(letter, sentence) {
         /*for ([initial value/expression],
           initial value => lets declare a variable that will identify/describe the count of each index (usually i) inside the string.(index count)
             [condition],
-          We want this process to evaluate the value of each index until it reaches the last index inside the string to terminate the process.
+              We want this process to evaluate the value of each index until it reaches the last index inside the string to terminate the process.
             [iteration/icrement]) -> will repeat the iteration/loop until a given condition has been met*/
         for (let indexCount = 0; indexCount < sentence.length; indexCount++) {
             // expression
@@ -51,6 +51,20 @@ function isIsogram(text) {
     // If the function finds a repeating letter, return false. Otherwise, return true.
 
 
+    // indexOf() => returns the index count within the "string" or text where the occurrence/instances of the target value happenend.
+        // (true) if found matches
+        // -1 as the return if no matches are found.
+
+    // 1st task: create a logic that will disregard the text casing. 'A' === 'a' (toLowerCase() => will allow us to convert/transform the text casing of a string into lowercase.) let's repackage the result of the method inside the same variable.
+    text = text.toLowerCase(); // instead of let newVARIABLE = text.toLowerCase();
+    // 2nd Task: let's create a new variable that will serve as the container for the characters/letters that we will evaluate for repetitions inside the string.
+    let letters = []    // this empty array will serve as the container for the characters that we will assess from the text/string.
+
+    // let's use a for loop method to identify the process of assessing the characters inside the string. this will also help us identify where the process will begin and where it will be terminated.
+    // for (initial value; condition; increment)
+    for (let indexCount = 0; indexCount < text.length; indexCount++) {
+
+    }
 }
 
 function purchase(age, price) {
