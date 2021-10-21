@@ -51,21 +51,37 @@ function isIsogram(text) {
     // If the function finds a repeating letter, return false. Otherwise, return true.
 
 
-    // indexOf() => returns the index count within the "string" or text where the occurrence/instances of the target value happenend.
+    // indexOf() => returns the index count within the "string" or text where the occurrence/instances of the target value happened.
         // (true) if found matches
         // -1 as the return if no matches are found.
 
     // 1st task: create a logic that will disregard the text casing. 'A' === 'a' (toLowerCase() => will allow us to convert/transform the text casing of a string into lowercase.) let's repackage the result of the method inside the same variable.
-    text = text.toLowerCase(); // instead of let newVARIABLE = text.toLowerCase();
+    text = text.toLowerCase(); // instead of let newVARIABLE = text.toLowerCase();  // what would happen when toUpperCase(); is used instead. developer's choice what would be used
     // 2nd Task: let's create a new variable that will serve as the container for the characters/letters that we will evaluate for repetitions inside the string.
-    let letters = []    // this empty array will serve as the container for the characters that we will assess from the text/string.
+    let letters = [];    // this empty array will serve as the container for the characters that we will assess from the text/string.
 
     // let's use a for loop method to identify the process of assessing the characters inside the string. this will also help us identify where the process will begin and where it will be terminated.
     // for (initial value; condition; increment)
     for (let indexCount = 0; indexCount < text.length; indexCount++) {
-
+        // expression
+        // lets create a control structure that will determine the  and assess the value of each item/index inside the string and compare to the return of the .indexOf() method.
+        // if the return of the .indexOf() method is -1 it means no matches/duplicates found within the text
+        if (letters.indexOf(text[indexCount]) !== -1) {
+            return false;
+        }
+        else {
+            // if the condition above is NOT MET then, push the current value of the index inside the "letters" container
+            // what method can you use in order to insert/push an element inside an array
+            letters.push(text[indexCount]); // the current value where the index is positioned in the text will be added as a new element inside the array.
+            console.log(letters);   // (optional). use this if you want to see it visually
+        }
     }
+    return true;    // no duplicates of each character inside the string were found (text is an isogram)
 }
+
+// invocation
+isIsogram('city');  // type node index.js in GIT 
+
 
 function purchase(age, price) {
     /*
